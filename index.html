@@ -39,6 +39,81 @@
       opacity: 0;
     }
   }
+  .register-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ff00ff; /* Cringe pink */
+    color: #ffff00; /* Cringe yellow */
+    border: 5px dashed #00ffff; /* Cringe cyan dashed border */
+    font-family: "Brush Script MT", cursive; /* Cringe font */
+    font-size: 30px;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #ff0000; /* Cringe red shadow */
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff; /* Glowing effect */
+    transition: all 0.3s ease;
+  }
+  .register-button:hover {
+    background-color: #ffff00; /* Cringe yellow on hover */
+    color: #ff00ff; /* Cringe pink on hover */
+    border-color: #ff0000; /* Cringe red border on hover */
+    box-shadow: 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00;
+    transform: scale(1.1);
+  }
+  .clickable-ps {
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .clickable-ps:hover {
+    color: #ff00ff !important; /* Cringe pink on hover */
+  }
+  .expect-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Added vertical spacing */
+    padding: 10px 20px;
+    border: 3px solid #ffff00;
+    border-radius: 15px;
+    background-color: #000000;
+    color: #00ff00;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+  }
+  .expect-button:hover {
+    background-color: #ffff00;
+    color: #000000;
+    animation: none;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 0, 0);
+    }
+  }
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000; /* Ensure it's above the GIF */
+    font-family: sans-serif;
+    text-shadow: 2px 2px 4px #ff0000;
+  }
+  .close-button:hover {
+    color: #ff00ff;
+  }
 </style>
 </head>
 <body>
@@ -70,7 +145,25 @@
   </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-  <p style="font-size: 12px; color: #cccccc;">PS: There will be punch and cookies!</p>
+  <p class="expect-button" onclick="showRickRoll()">IMPORTANT INFORMATION</p>
+
+  <a href="https://www.termino.gv.at/meet/p/b3a2caed25ada8b32593909662e18835-512878" class="register-button">REGISTER NOW!</a>
+
+  <div id="rickroll-gif" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 9999; justify-content: center; align-items: center;">
+    <span class="close-button" onclick="showRickRoll()">X</span>
+    <div class="tenor-gif-embed" data-postid="22954713" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713">Rickroll Never Gonna Give You Up GIF</a>from <a href="https://tenor.com/search/rickroll-gifs">Rickroll GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  </div>
+
+  <script>
+    function showRickRoll() {
+      var rickRollGif = document.getElementById('rickroll-gif');
+      if (rickRollGif.style.display === 'none') {
+        rickRollGif.style.display = 'flex';
+      } else {
+        rickRollGif.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 </html>
